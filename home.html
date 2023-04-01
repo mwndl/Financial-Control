@@ -3,163 +3,14 @@
 <head>
   <meta charset="UTF-8">
 	<title>Financial Control</title>
-	<!-- Inclua o CSS do Bootstrap -->
+	<!-- CSS do Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<style>
-        body {
-          background-color: #fff2cc;
-        }
-
-        label {
-          display: block;
-          margin-top: 10px;
-          margin-bottom: 5px;
-        }
-        input[type="text"],
-        select {
-          width: 100%;
-          padding: 8px 12px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          margin-bottom: 10px;
-        }
-        input[type="number"] {
-          width: 100%;
-          padding: 8px 12px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          margin-bottom: 10px;
-        }
-
-        input[type="date"] {
-          width: 100%;
-          padding: 8px 12px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          margin-bottom: 10px;
-        }
-
-        input[type="time"] {
-          width: 100%;
-          padding: 8px 12px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          margin-bottom: 10px;
-        }
-
-        select option[disabled]:first-child {
-          color: #ffffff50;
-        }
-        select option[value=""][disabled]:before {
-          content: attr(placeholder);
-          color: #ffffff50;
-        }
-        button[type="submit"] {
-          background-color: #4CAF50;
-          color: white;
-          padding: 8px 16px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          margin-right: 10px;
-        }
-        button[type="submit"]:hover {
-          background-color: #45a049;
-        }
-        button[type="button"] {
-          background-color: #f44336;
-          color: white;
-          padding: 8px 16px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-        button[type="button"]:hover {
-          background-color: #d32f2f;
-        }
-		.container {
-			padding: 2rem;
-			max-width: 800px;
-			margin: 0 auto;
-		}
-
-		h1 {
-			font-size: 3rem;
-			margin-bottom: 2rem;
-			text-align: center;
-		}
-
-		.card-header {
-			background-color: #f1f1f1;
-			border-bottom: none;
-		}
-
-		.btn-link {
-			font-size: 1.5rem;
-			color: #333;
-			text-decoration: none;
-			transition: all 0.2s ease-in-out;
-		}
-
-		.btn-link:hover,
-		.btn-link:focus {
-			color: #007bff;
-			text-decoration: none;
-		}
-
-		.card-body {
-			background-color: #fff;
-			border: 1px solid #f1f1f1;
-			border-top: none;
-			padding: 1.5rem;
-			font-size: 1.2rem;
-			line-height: 1.5;
-			transition: all 0.2s ease-in-out;
-		}
-
-		.collapse.show + .card-header .btn-link {
-			color: #007bff;
-		}
-
-		.collapse.show .card-body {
-			border-top: 1px solid #f1f1f1;
-		}
-
-    .data-horario {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .data, .horario {
-      width: 45%;
-    }
-
-    .data label, .horario label {
-      display: block;
-    }
-
-    .data input, .horario input {
-      width: 100%;
-    }
-
-    @media only screen and (max-width: 600px) {
-      .data, .horario {
-        width: 100%;
-      }
-    }
-
-
-	</style>
+  <link rel="stylesheet" href="page-style.css">
 </head>
 <body>
 	<div class="container">
 		<h1>Financial Control (Beta)</h1>
-
-		<!-- Use um accordion para as opções expansíveis -->
+		<!-- Accordion para as opções expansíveis -->
 		<div id="accordion">
 			<div class="card">
 				<div class="card-header" id="headingOne">
@@ -169,48 +20,41 @@
 						</button>
 					</h5>
 				</div>
-
 				<div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
 						<form id="Form-Renda">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo" required placeholder="Digite o título aqui">
+              <label for="titulo">Título:</label>
+              <input type="text" id="titulo-renda" name="titulo" required placeholder="Digite o título aqui">
 
-                <label for="valor">Valor (R$):</label>
-                <input type="number" id="valor" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
+              <label for="valor">Valor (R$):</label>
+              <input type="number" id="valor-renda" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
 
-                <div class="data-horario">
-                  <div class="data">
-                    <label for="data">Data:</label>
-                    <input type="date" id="data" name="data" required>
-                  </div>
-                  <div class="horario">
-                    <label for="horario">Horário:</label>
-                    <input type="time" id="horario" name="horario" required>
-                  </div>
-                </div>
+              <label for="datetime">Data e Hora:</label>
+              <input type="datetime-local" id="datahora-renda" value="" min="" />
 
-                <label for="pagamento">Meio de Recebimento:</label>
-                    <select id="pagamento" name="pagamento" required>
-                      <option value="" disabled selected hidden>Selecione o meio de recebimento</option>
-                      <option value="opcao3">Transferência Bancária</option>
-                      <option value="opcao4">Dinheiro</option>
-                    </select>
+              <script src=date-hour.js></script>
 
-                <label for="descricao">Descrição:</label>
-                <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição aqui">
+              <label for="pagamento">Meio de Recebimento:</label>
+                  <select id="pagamento-renda" name="pagamento" required>
+                    <option value="" disabled selected hidden>Selecione o meio de recebimento</option>
+                    <option value="opcao3">Transferência Bancária</option>
+                    <option value="opcao4">Dinheiro</option>
+                  </select>
 
-                <button type="submit" onclick="registerRenda()">Registrar</button>
-                <button type="button" onclick="google.script.host.close()">Cancelar</button>
+              <label for="descricao">Descrição:</label>
+              <input type="text" id="descricao-renda" name="descricao" placeholder="Digite a descrição aqui">
 
-                <script>
-                  function registerRenda() {
-                  var form = document.getElementById("registerRenda");
-                    google.script.run.withSuccessHandler(function() {
-                      form.reset();
-                    }).registerRenda(form);
-                  }
-                </script>
+              <button type="submit" onclick="registerRenda()">Registrar</button>
+              <button type="button" onclick="google.script.host.close()">Cancelar</button>
+
+              <script>
+                function registerRenda() {
+                var form = document.getElementById("registerRenda");
+                  google.script.run.withSuccessHandler(function() {
+                    form.reset();
+                  }).registerRenda(form);
+                }
+              </script>
             </form>
 					</div>
 				</div>
@@ -227,66 +71,58 @@
 
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 					<div class="card-body">
-						    <form id="correctionForm">
-                               <label for="titulo">Título:</label>
-                               <input type="text" id="titulo" name="titulo" required placeholder="Digite o título aqui">
+						  <form id="correctionForm">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo-despesa" name="titulo" required placeholder="Digite o título aqui">
 
-                               <label for="categoria">Categoria:</label>
-                               <select id="categoria" name="categoria" required>
-                                  <option value="" disabled selected hidden>Selecione a categoria</option>
-                                  <option value="opcao1">Alimentação</option>
-                                  <option value="opcao2">Igreja</option>
-                                  <option value="opcao3">Compras</option>
-                                  <option value="opcao4">Cuidados Pessoais</option>
-                                  <option value="opcao5">Transporte</option>
-                                  <option value="opcao6">Outros</option>
-                                </select>
+                <label for="categoria">Categoria:</label>
+                <select id="categoria-despesa" name="categoria" required>
+                  <option value="" disabled selected hidden>Selecione a categoria</option>
+                  <option value="opcao1">Alimentação</option>
+                  <option value="opcao2">Igreja</option>
+                  <option value="opcao3">Compras</option>
+                  <option value="opcao4">Cuidados Pessoais</option>
+                  <option value="opcao5">Transporte</option>
+                  <option value="opcao6">Outros</option>
+                </select>
 
-                                <label for="valor">Valor (R$):</label>
-                                <input type="number" id="valor" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
+                <label for="valor">Valor (R$):</label>
+                <input type="number" id="valor-despesa" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
 
-                                <div class="data-horario">
-                                  <div class="data">
-                                    <label for="data">Data:</label>
-                                    <input type="date" id="data" name="data" required>
-                                  </div>
-                                  <div class="horario">
-                                    <label for="horario">Horário:</label>
-                                    <input type="time" id="horario" name="horario" required>
-                                  </div>
-                                </div>
+                <label for="datetime">Data e Hora:</label>
+                <input type="datetime-local" id="datahora-despesa" value="" min="" />
 
-                                <label for="pagamento">Forma de pagamento:</label>
-                               <select id="pagamento" name="pagamento" required>
-                                  <option value="" disabled selected hidden>Selecione a forma de pagamento</option>
-                                  <option value="opcao1">Cartão de Crédito</option>
-                                  <option value="opcao2">Cartão de Débito</option>
-                                  <option value="opcao3">Transferência Bancária</option>
-                                  <option value="opcao4">Dinheiro</option>
-                                </select>
+                <label for="pagamento">Forma de pagamento:</label>
+                <select id="pagamento-despesa" name="pagamento" required>
+                  <option value="" disabled selected hidden>Selecione a forma de pagamento</option>
+                  <option value="opcao1">Cartão de Crédito</option>
+                  <option value="opcao2">Cartão de Débito</option>
+                  <option value="opcao3">Transferência Bancária</option>
+                  <option value="opcao4">Dinheiro</option>
+                </select>
 
-                                <label for="descricao">Descrição:</label>
-                                <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição aqui">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao-despesa" name="descricao" placeholder="Digite a descrição aqui">
 
-                              <button type="submit" onclick="registerCorrection()">Registrar</button>
-                              <button type="button" onclick="google.script.host.close()">Cancelar</button>
+                <button type="submit" onclick="registerCorrection()">Registrar</button>
+                <button type="button" onclick="google.script.host.close()">Cancelar</button>
 
-                              <script>
-                                 function registerDespesa() {
-                                   var form = document.getElementById("correctionForm");
-                                   google.script.run.withSuccessHandler(function() {
-                                    form.reset();
-                                   }).registerDespesa(form);
-                                  }
-                              </script>
-                           </form>
+                <script>
+                    function registerDespesa() {
+                      var form = document.getElementById("correctionForm");
+                      google.script.run.withSuccessHandler(function() {
+                      form.reset();
+                      }).registerDespesa(form);
+                    }
+                </script>
+              </form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- Inclua o JavaScript do Bootstrap -->
+	<!-- JavaScript do Bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

@@ -5,162 +5,7 @@
 	<title>Financial Control</title>
 	<!-- CSS do Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<style>
-    body {
-      background-color: #fff2cc;
-    }
-
-    label {
-      display: block;
-      margin-top: 10px;
-      margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    select {
-      width: 100%;
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
-
-    input[type="number"] {
-      width: 100%;
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
-
-    input[type="date"] {
-      width: 100%;
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
-
-    input[type="time"] {
-      width: 100%;
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
-
-    select option[disabled]:first-child {
-      color: #ffffff50;
-    }
-
-    select option[value=""][disabled]:before {
-      content: attr(placeholder);
-      color: #ffffff50;
-    }
-
-    button[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #45a049;
-    }
-
-    button[type="button"] {
-      background-color: #f44336;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button[type="button"]:hover {
-      background-color: #d32f2f;
-    }
-
-		.container {
-			padding: 2rem;
-			max-width: 800px;
-			margin: 0 auto;
-		}
-
-		h1 {
-			font-size: 3rem;
-			margin-bottom: 2rem;
-			text-align: center;
-		}
-
-		.card-header {
-			background-color: #f1f1f1;
-			border-bottom: none;
-		}
-
-		.btn-link {
-			font-size: 1.5rem;
-			color: #333;
-			text-decoration: none;
-			transition: all 0.2s ease-in-out;
-		}
-
-		.btn-link:hover,
-		.btn-link:focus {
-			color: #007bff;
-			text-decoration: none;
-		}
-
-		.card-body {
-			background-color: #fff;
-			border: 1px solid #f1f1f1;
-			border-top: none;
-			padding: 1.5rem;
-			font-size: 1.2rem;
-			line-height: 1.5;
-			transition: all 0.2s ease-in-out;
-		}
-
-		.collapse.show + .card-header .btn-link {
-			color: #007bff;
-		}
-
-		.collapse.show .card-body {
-			border-top: 1px solid #f1f1f1;
-		}
-
-    .data-horario {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .data, .horario {
-      width: 45%;
-    }
-
-    .data label, .horario label {
-      display: block;
-    }
-
-    .data input, .horario input {
-      width: 100%;
-    }
-
-    @media only screen and (max-width: 600px) {
-      .data, .horario {
-        width: 100%;
-      }
-    }
-
-	</style>
+	<style scr="page-style.css"></style>
 </head>
 <body>
 	<div class="container">
@@ -194,6 +39,10 @@
                   <input type="time" id="horario" name="horario" required>
                 </div>
               </div>
+
+              <input type="datetime-local" id="datahora" value="" min="" />
+
+              <script src=date-hour.js></script>
 
               <label for="pagamento">Meio de Recebimento:</label>
                   <select id="pagamento" name="pagamento" required>
