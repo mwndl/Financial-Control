@@ -23,8 +23,13 @@ body {
   /* Define o estilo do título */
   h1 {
     font-size: 2em;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     color: #333;
+  }
+  h2 {
+    font-size: 14px;
+    margin-bottom: 40px;
+    color: #3b3b3b;
   }
   
   /* Define o estilo do rótulo e campo de entrada */
