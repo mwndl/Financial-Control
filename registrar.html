@@ -53,38 +53,38 @@
 				<div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
 						<form id="rendaFotm">
-              <label for="titulo">Título:</label>
-              <input type="text" id="titulo-renda" name="titulo" required placeholder="Digite o título aqui">
+						      <label for="titulo">Título:</label>
+						      <input type="text" id="titulo-renda" name="titulo" required placeholder="Digite o título aqui">
 
-              <label for="valor">Valor (R$):</label>
-              <input type="number" id="valor-renda" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
+						      <label for="valor">Valor (R$):</label>
+						      <input type="number" id="valor-renda" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
 
-              <label for="datetime">Data e Hora:</label>
-              <input type="datetime-local" id="datahora-renda" value="" min="" />
+						      <label for="datetime">Data e Hora:</label>
+						      <input type="datetime-local" id="datahora-renda" value="" min="" />
 
-              <script src=date-hour.js></script>
+						      <script src=date-hour.js></script>
 
-              <label for="pagamento">Meio de Recebimento:</label>
-                  <select id="pagamento-renda" name="pagamento" required>
-                    <option value="" disabled selected hidden>Selecione o meio de recebimento</option>
-                    <option value="opcao3">Transferência Bancária</option>
-                    <option value="opcao4">Dinheiro</option>
-                  </select>
+						      <label for="pagamento">Meio de Recebimento:</label>
+							  <select id="pagamento-renda" name="pagamento" required>
+							    <option value="" disabled selected hidden>Selecione o meio de recebimento</option>
+							    <option value="opcao3">Transferência Bancária</option>
+							    <option value="opcao4">Dinheiro</option>
+							  </select>
 
-              <label for="descricao">Descrição:</label>
-              <input type="text" id="descricao-renda" name="descricao" placeholder="Digite a descrição aqui">
+						      <label for="descricao">Descrição:</label>
+						      <input type="text" id="descricao-renda" name="descricao" placeholder="Digite a descrição aqui">
 
-              <button type="submit" onclick="registerRenda()">Registrar</button>
-              <button type="button" onclick="google.script.host.close()">Cancelar</button>
-              <script>
-                function registerRenda() {
-                var form = document.getElementById("registerRenda");
-                  google.script.run.withSuccessHandler(function() {
-                    form.reset();
-                  }).registerRenda(form);
-                }
-              </script>
-            </form>
+						      <button type="submit" onclick="registerRenda()">Registrar</button>
+						      <button type="button" onclick="google.script.host.close()">Cancelar</button>
+						      <script>
+							function registerRenda() {
+							var form = document.getElementById("registerRenda");
+							  google.script.run.withSuccessHandler(function() {
+							    form.reset();
+							  }).registerRenda(form);
+							}
+						      </script>
+						    </form>
 					</div>
 				</div>
 			</div>
@@ -100,50 +100,50 @@
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 					<div class="card-body">
 						  <form id="despesaForm">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo-despesa" name="titulo" required placeholder="Digite o título aqui">
+						<label for="titulo">Título:</label>
+						<input type="text" id="titulo-despesa" name="titulo" required placeholder="Digite o título aqui">
 
-                <label for="categoria">Categoria:</label>
-                <select id="categoria-despesa" name="categoria" required>
-                  <option value="" disabled selected hidden>Selecione a categoria</option>
-                  <option value="opcao1">Alimentação</option>
-                  <option value="opcao2">Igreja</option>
-                  <option value="opcao3">Compras</option>
-                  <option value="opcao4">Cuidados Pessoais</option>
-                  <option value="opcao5">Transporte</option>
-                  <option value="opcao6">Outros</option>
-                </select>
+						<label for="categoria">Categoria:</label>
+						<select id="categoria-despesa" name="categoria" required>
+						  <option value="" disabled selected hidden>Selecione a categoria</option>
+						  <option value="opcao1">Alimentação</option>
+						  <option value="opcao2">Igreja</option>
+						  <option value="opcao3">Compras</option>
+						  <option value="opcao4">Cuidados Pessoais</option>
+						  <option value="opcao5">Transporte</option>
+						  <option value="opcao6">Outros</option>
+						</select>
 
-                <label for="valor">Valor (R$):</label>
-                <input type="number" id="valor-despesa" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
+						<label for="valor">Valor (R$):</label>
+						<input type="number" id="valor-despesa" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
 
-                <label for="datetime">Data e Hora:</label>
-                <input type="datetime-local" id="datahora-despesa" value="" min="" />
+						<label for="datetime">Data e Hora:</label>
+						<input type="datetime-local" id="datahora-despesa" value="" min="" />
 
-                <label for="pagamento">Forma de pagamento:</label>
-                <select id="pagamento-despesa" name="pagamento" required>
-                  <option value="" disabled selected hidden>Selecione a forma de pagamento</option>
-                  <option value="opcao1">Cartão de Crédito</option>
-                  <option value="opcao2">Cartão de Débito</option>
-                  <option value="opcao3">Transferência Bancária</option>
-                  <option value="opcao4">Dinheiro</option>
-                </select>
+						<label for="pagamento">Forma de pagamento:</label>
+						<select id="pagamento-despesa" name="pagamento" required>
+						  <option value="" disabled selected hidden>Selecione a forma de pagamento</option>
+						  <option value="opcao1">Cartão de Crédito</option>
+						  <option value="opcao2">Cartão de Débito</option>
+						  <option value="opcao3">Transferência Bancária</option>
+						  <option value="opcao4">Dinheiro</option>
+						</select>
 
-                <label for="descricao">Descrição:</label>
-                <input type="text" id="descricao-despesa" name="descricao" placeholder="Digite a descrição aqui">
+						<label for="descricao">Descrição:</label>
+						<input type="text" id="descricao-despesa" name="descricao" placeholder="Digite a descrição aqui">
 
-                <button type="submit" onclick="registerCorrection()">Registrar</button>
-                <button type="button" onclick="google.script.host.close()">Cancelar</button>
+						<button type="submit" onclick="registerCorrection()">Registrar</button>
+						<button type="button" onclick="google.script.host.close()">Cancelar</button>
 
-                <script>
-                    function registerDespesa() {
-                      var form = document.getElementById("correctionForm");
-                      google.script.run.withSuccessHandler(function() {
-                      form.reset();
-                      }).registerDespesa(form);
-                    }
-                </script>
-              </form>
+						<script>
+						    function registerDespesa() {
+						      var form = document.getElementById("correctionForm");
+						      google.script.run.withSuccessHandler(function() {
+						      form.reset();
+						      }).registerDespesa(form);
+						    }
+						</script>
+					      </form>
 					</div>
 				</div>
 			</div>
