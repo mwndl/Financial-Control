@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Financial Control</title>
+	<!-- CSS do Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="page-style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="homepage.html">Financial Control (Beta)</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="registrar.html">Registrar Transação</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="estatisticas.html">Dados e Gráficos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rendas-all.html">Rendas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="despesas-all.html">Despesas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="configurações.html">Configurações</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ajuda.html">Ajuda</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+    <div id="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <div class="popup-message">
+                <img src="check-icon.png" alt="Check" class="popup-icon">
+                    <div>
+                        Transação salva com sucesso!
+                    </div>
+            </div>
+            <script>
+                function openPopup() {
+                var popup = document.querySelector('#popup');
+                popup.style.display = 'block';
+                }
+        
+                // Seleciona o botão de fechar e o pop-up
+                var popupClose = document.querySelector('.popup-close');
+                var popup = document.querySelector('#popup');
+        
+                // Oculta o pop-up quando a página é carregada
+                popup.style.display = 'none';
+        
+                // Adiciona um evento de clique ao botão de fechar
+                popupClose.addEventListener('click', function() {
+                popup.style.display = 'none'; // Oculta o pop-up
+                });
+            </script>
+        </div>
+    </div>
+	<!-- JavaScript do Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
