@@ -32,7 +32,7 @@
           <a class="nav-link" href="#">Configurações</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ajuda</a>
+          <a class="nav-link" href="#" onclick="openPopup()">Ajuda</a>
         </li>
       </ul>
     </div>
@@ -52,7 +52,7 @@
 				</div>
 				<div id="collapseOne" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
 					<div class="card-body">
-						<form id="rendaFotm">
+						<form id="registerRenda">
               <label for="titulo">Título:</label>
               <input type="text" id="titulo-renda" name="titulo" required placeholder="Digite o título aqui">
 
@@ -61,8 +61,6 @@
 
               <label for="datetime">Data e Hora:</label>
               <input type="datetime-local" id="datahora-renda" value="" min="" />
-
-              <script src=date-hour.js></script>
 
               <label for="pagamento">Meio de Recebimento:</label>
                   <select id="pagamento-renda" name="pagamento" required>
@@ -75,14 +73,30 @@
               <input type="text" id="descricao-renda" name="descricao" placeholder="Digite a descrição aqui">
 
               <button type="submit" onclick="registerRenda()">Registrar</button>
-              <button type="button" onclick="google.script.host.close()">Cancelar</button>
+              <button type="button" onclick="resetRendaForm()">Cancelar</button>
               <script>
                 function registerRenda() {
-                var form = document.getElementById("registerRenda");
+                  var form = document.getElementById("registerRenda");
                   google.script.run.withSuccessHandler(function() {
                     form.reset();
                   }).registerRenda(form);
                 }
+                function resetRendaForm() {
+                  var campoTituloR = document.getElementById("titulo-renda");
+                  campoTituloR.value = "";
+                  var campoValorR = document.getElementById("valor-renda");
+                  campoValorR.value = "";
+                  var campoPagamentoR = document.getElementById("pagamento-renda");
+                  campoPagamentoR.value = "";
+                  var campoDescricaoR = document.getElementById("descricao-renda");
+                  campoDescricaoR.value = "";
+                }
+
+                var agora = new Date(); // obter a data e hora atual com base na localização do usuário
+                var hora_local = agora.getTimezoneOffset() / 60; // obter o deslocamento horário em relação ao UTC em horas
+                agora.setHours(agora.getHours() - hora_local); // ajustar a hora para o fuso horário correto
+                var agora_formatada = agora.toISOString().slice(0, 16); // formatar a data e hora
+                document.getElementById("datahora-renda").value = agora_formatada; // atualizar o valor do campo
               </script>
             </form>
 					</div>
@@ -99,7 +113,7 @@
 				</div>
 				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 					<div class="card-body">
-						  <form id="despesaForm">
+						  <form id="registerDespesa">
                 <label for="titulo">Título:</label>
                 <input type="text" id="titulo-despesa" name="titulo" required placeholder="Digite o título aqui">
 
@@ -118,7 +132,7 @@
                 <input type="number" id="valor-despesa" name="valor" required placeholder="Digite o valor aqui" pattern="^\d+(\.\d{1,2})?$">
 
                 <label for="datetime">Data e Hora:</label>
-                <input type="datetime-local" id="datahora-despesa" value="" min="" />
+                <input type="datetime-local" id="datahora-despesa" value="" min="" required/>
 
                 <label for="pagamento">Forma de pagamento:</label>
                 <select id="pagamento-despesa" name="pagamento" required>
@@ -132,21 +146,69 @@
                 <label for="descricao">Descrição:</label>
                 <input type="text" id="descricao-despesa" name="descricao" placeholder="Digite a descrição aqui">
 
-                <button type="submit" onclick="registerCorrection()">Registrar</button>
-                <button type="button" onclick="google.script.host.close()">Cancelar</button>
+                <button type="submit" onclick="registerDespesa()">Registrar</button>
+                <button type="button" onclick="resetDespesaForm()">Cancelar</button>
 
                 <script>
-                    function registerDespesa() {
-                      var form = document.getElementById("correctionForm");
-                      google.script.run.withSuccessHandler(function() {
-                      form.reset();
-                      }).registerDespesa(form);
-                    }
+                function registerDespesa() {
+                var form = document.getElementById("registerDespesa");
+                  google.script.run.withSuccessHandler(function() {
+                    form.reset();
+                  }).registerDespesa(form);
+                }
+                function resetDespesaForm() {
+                  var campoTituloD = document.getElementById("titulo-despesa");
+                  campoTituloD.value = "";
+                  var campoCategoriaD = document.getElementById("categoria-despesa");
+                  campoCategoriaD.value = "";
+                  var campoValorD = document.getElementById("valor-despesa");
+                  campoValorD.value = "";
+                  var campoPagamentoD = document.getElementById("pagamento-despesa");
+                  campoPagamentoD.value = "";
+                  var campoDescricaoD = document.getElementById("descricao-despesa");
+                  campoDescricaoD.value = "";
+                }
+
+                    var agora = new Date(); // obter a data e hora atual com base na localização do usuário
+                    var hora_local = agora.getTimezoneOffset() / 60; // obter o deslocamento horário em relação ao UTC em horas
+                    agora.setHours(agora.getHours() - hora_local); // ajustar a hora para o fuso horário correto
+                    var agora_formatada = agora.toISOString().slice(0, 16); // formatar a data e hora
+                    document.getElementById("datahora-despesa").value = agora_formatada; // atualizar o valor do campo
+
                 </script>
               </form>
 					</div>
 				</div>
 			</div>
+      <div id="popup">
+        <div class="popup-content">
+          <span class="popup-close">&times;</span>
+          <div class="popup-message">
+            <img src="check-icon.png" alt="Check" class="popup-icon">
+            <div>
+              Transação salva com sucesso!
+            </div>
+          </div>
+          <script>
+            function openPopup() {
+              var popup = document.querySelector('#popup');
+              popup.style.display = 'block';
+            }
+            
+            // Seleciona o botão de fechar e o pop-up
+            var popupClose = document.querySelector('.popup-close');
+            var popup = document.querySelector('#popup');
+            
+            // Oculta o pop-up quando a página é carregada
+            popup.style.display = 'none';
+            
+            // Adiciona um evento de clique ao botão de fechar
+            popupClose.addEventListener('click', function() {
+              popup.style.display = 'none'; // Oculta o pop-up
+            });
+          </script>
+        </div>
+      </div>      
 		</div>
 	</div>
 
