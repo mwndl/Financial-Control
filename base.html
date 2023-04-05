@@ -37,35 +37,6 @@
       </ul>
     </div>
   </nav>
-    <div id="popup">
-        <div class="popup-content">
-            <span class="popup-close">&times;</span>
-            <div class="popup-message">
-                <img src="check-icon.png" alt="Check" class="popup-icon">
-                    <div>
-                        Transação salva com sucesso!
-                    </div>
-            </div>
-            <script>
-                function openPopup() {
-                var popup = document.querySelector('#popup');
-                popup.style.display = 'block';
-                }
-        
-                // Seleciona o botão de fechar e o pop-up
-                var popupClose = document.querySelector('.popup-close');
-                var popup = document.querySelector('#popup');
-        
-                // Oculta o pop-up quando a página é carregada
-                popup.style.display = 'none';
-        
-                // Adiciona um evento de clique ao botão de fechar
-                popupClose.addEventListener('click', function() {
-                popup.style.display = 'none'; // Oculta o pop-up
-                });
-            </script>
-        </div>
-    </div>
 	<!-- JavaScript do Bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
