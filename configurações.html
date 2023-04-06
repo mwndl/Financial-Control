@@ -4,43 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Financial Control</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 	<!-- CSS do Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="page-style.css">
+  <link rel="stylesheet" href="login-style.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="homepage.html">Financial Control (Beta)</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="registrar.html">Registrar Transação</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="estatisticas.html">Dados e Gráficos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="rendas-all.html">Rendas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="despesas-all.html">Despesas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="configurações.html">Configurações</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="ajuda.html">Ajuda</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container">
-		<h1>Configurações</h1>
-    <h2>Desculpe, essa página ainda não está disponível para ser acessada. 😥</h2>
-	</div>
+  <div class="barra-de-navegação">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="homepage.html">Financial Control (Beta)</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="registrar.html">Registrar Transação</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="estatisticas.html">Dados e Gráficos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="rendas-all.html">Rendas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="despesas-all.html">Despesas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="configurações.html">Configurações</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ajuda.html">Ajuda</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div>
+    <body>
+      <div class="login-container">
+        <h1>Vamos nos conectar?</h1>
+        <h2>Por favor, sincronize um template válido do Notion:</h2>
+        <form>
+          <div class="form-group">
+              <label for="notion-id">ID do Template:</label>
+              <input type="text" id="notion-id" name="notion-id" placeholder="Digite o link do banco de dados" required>
+            </div>
+            <div class="form-group">
+              <label for="database-token">Secret Token:</label>
+              <input type="text" id="database-token" name="database-token" placeholder="Digite o token de segurança" required>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label" for="remember-me">Confiar nesse navegador?</label>
+              <input type="checkbox" id="remember-me" name="remember-me">
+          </div>          
+          <button type="submit">Entrar</button>
+          <button type="button" class="help-button">Ajuda</button>
+        </form>
+      </div>
+  </div>
+</body>
 	<!-- JavaScript do Bootstrap -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

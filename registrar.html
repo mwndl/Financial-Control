@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Financial Control</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 	<!-- CSS do Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="page-style.css">
@@ -72,8 +73,8 @@
               <label for="descricao">Descrição:</label>
               <input type="text" id="descricao-renda" name="descricao" placeholder="Algo a acrescentar?">
 
-              <button type="submit" onclick="registerRenda()">Registrar</button>
-              <button type="button" onclick="resetRendaForm()">Cancelar</button>
+              <button type="submit" class="summit-button" onclick="registerRenda()">Registrar</button>
+              <button type="button" class="cancel-button" onclick="resetRendaForm()">Cancelar</button>
               <script>
                 function registerRenda() {
                   var form = document.getElementById("registerRenda");
@@ -102,7 +103,6 @@
 					</div>
 				</div>
 			</div>
-
       <div class="card">
 				<div class="card-header" id="headingTwo">
 					<h5 class="mb-0">
@@ -146,8 +146,8 @@
                 <label for="descricao">Descrição:</label>
                 <input type="text" id="descricao-despesa" name="descricao" placeholder="Algo a acrescentar?">
 
-                <button type="submit" onclick="registerDespesa()">Registrar</button>
-                <button type="button" onclick="resetDespesaForm()">Cancelar</button>
+                <button type="submit" class="summit-button" onclick="registerDespesa()">Registrar</button>
+                <button type="button" class="cancel-button" onclick="resetDespesaForm()">Cancelar</button>
 
                 <script>
                 function registerDespesa() {
@@ -206,6 +206,11 @@
             popupClose.addEventListener('click', function() {
               popup.style.display = 'none'; // Oculta o pop-up
             });
+
+            document.getElementById("open-modal").addEventListener("click", function() {
+              document.getElementById("login-modal").style.display = "block";
+            });
+
           </script>
         </div>
       </div>      

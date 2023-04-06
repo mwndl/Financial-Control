@@ -45,7 +45,16 @@ body {
     color: #ffffff50;
   }
 
-  button[type="submit"] {
+    /* Botão da NavBar (mobile) */
+    button[type="button"] {
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+  /* BOTÕES REGISTRAR/CANCELAR DA PÁG REGISTROS */
+  .summit-button {
     background-color: #4CAF50;
     color: white;
     padding: 8px 16px;
@@ -55,11 +64,11 @@ body {
     margin-right: 10px;
   }
 
-  button[type="submit"]:hover {
+  .summit-button:hover {
     background-color: #45a049;
   }
 
-  button[type="button"] {
+  .cancel-button {
     background-color: #f44336;
     color: white;
     padding: 8px 16px;
@@ -67,10 +76,11 @@ body {
     border-radius: 4px;
     cursor: pointer;
   }
-
-  button[type="button"]:hover {
-    background-color: #d32f2f;
+  
+  .cancel-button:hover {
+    background-color: #c13838;
   }
+   /*   */
 
   .container {
       padding: 2rem;
@@ -214,5 +224,3 @@ body {
   margin-right: 10px;
   fill: green;
 }
-
-
