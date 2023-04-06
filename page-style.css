@@ -94,10 +94,22 @@ body {
       text-align: center;
   }
 
-  
   h2 {
     font-size: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .empty-page-title {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    text-align: center;
+  }
+
+
+  .empty-page-subtitle {
+    font-size: 1rem;
+    margin-top: 1rem;
     text-align: center;
   }
 
